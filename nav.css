@@ -38,6 +38,7 @@ header {
 }
 
 .nav {
+    --nav-height: clamp(3.25rem, max(3.6145vw + 0.5392rem, 4.3321vw - 0.0736rem), 5.125rem);
     margin: 10px auto;
     border: 0.1px solid var(--nav-border);
     border-radius: 4px;
@@ -48,23 +49,26 @@ header {
     justify-content: space-between;
     background-color: var(--nav-bg);
     max-width: 1920px;
-    padding: 0 24px;
-    height: clamp(3.25rem,
-            max(3.6145vw + 0.5392rem, 4.3321vw - 0.0736rem),
-            5.125rem);
+    padding: 0 24px 0 clamp(0.5rem, 0.25rem + 0.5vw, 0.875rem);
+    height: var(--nav-height);
 }
 
 .logo-img {
-    height: clamp(3.25rem,
-            max(3.6145vw + 0.5392rem, 4.3321vw - 0.0736rem),
-            5.125rem);
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: calc(var(--nav-height) - 8px);
+    object-fit: contain;
+    object-position: left center;
 }
 
 .logo {
-    margin: auto 15px;
-    max-width: 100%;
-    height: auto;
-    align-self: self-start;
+    display: flex;
+    align-items: center;
+    flex: 0 1 clamp(11.25rem, 9.70779rem + 6.49351vw, 17.5rem);
+    min-width: 0;
+    margin: 0;
+    align-self: center;
 }
 
 .nav-ul {
@@ -171,17 +175,15 @@ header {
 img { max-width: 100%; }
 @media (min-width: 956px) and (max-width: 1250px) {
     .nav { padding-inline: 12px; }
-    .logo { margin-inline: 0; }
-    .logo-img { height: 44px; max-width: 150px; object-fit: contain; }
+    .logo { flex-basis: 180px; }
     .li { margin-inline: 6px; font-size: 14px; }
     .download-nav { padding: 10px 12px; font-size: 14px; }
     .lang { padding: 6px; font-size: 14px; }
     .side-nav { margin-right: 0; }
 }
 @media (max-width: 955px) {
-    .nav { width: 92%; height: auto; min-height: 64px; padding: 8px 12px; }
-    .logo { margin: 0; align-self: center; }
-    .logo-img { display: block; width: 160px; height: auto; }
+    .nav { --nav-height: 64px; width: 92%; height: auto; min-height: var(--nav-height); padding: 8px; gap: 12px; }
+    .logo { flex-basis: clamp(11.25rem, 10.42391rem + 3.47826vw, 12.5rem); margin: 0; }
     .side-nav { display: none; }
     .mobile-menu { display: block; margin-left: auto; }
     .mobile-menu summary { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px; cursor: pointer; list-style: none; }
