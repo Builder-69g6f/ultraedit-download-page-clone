@@ -1,0 +1,119 @@
+/* Fluid lengths interpolate from 380px to 1920px; media rules retain tablet/phone layouts. */
+:root {
+    --faq-box: #f4f4f4;
+    --arrow-box: #ffd741;
+    --faq-box-border: #545454;
+}
+
+.faq-sec {
+    margin-bottom: clamp(1.5rem, 1.40747rem + 0.38961vw, 1.875rem);
+}
+
+.faq-container {    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.faq-head {
+    margin: clamp(1.5rem, 1.40747rem + 0.38961vw, 1.875rem) 0;
+    font-size: clamp(2rem, 1.84578rem + 0.64935vw, 2.625rem);
+    font-weight: 600;
+}
+
+.faqs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 clamp(1.2rem, 1.12597rem + 0.31169vw, 1.5rem);
+}
+
+.faq-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: var(--faq-box);
+    margin: clamp(0.75rem, 0.70373rem + 0.19481vw, 0.9375rem) auto;
+    padding: 0 clamp(1rem, 0.93831rem + 0.25974vw, 1.25rem);
+    min-height: clamp(2.55rem, 2.43896rem + 0.46753vw, 3rem);
+    height: auto;
+    gap: clamp(0.8rem, 0.75065rem + 0.20779vw, 1rem);
+    padding-block: clamp(0.7rem, 0.65682rem + 0.18182vw, 0.875rem);
+    width: clamp(0rem, 70vw, 84rem);
+    border: 0.5px solid var(--faq-box-border);
+    border-radius: clamp(0.3rem, 0.28149rem + 0.07792vw, 0.375rem);
+    max-width: 1820px;
+}
+
+
+.arrow-box {
+    background-color: var(--arrow-box);
+    flex-shrink: 0;
+    height: clamp(1.0625rem, 1.01623rem + 0.19481vw, 1.25rem);
+    width: clamp(1.0625rem, 1.01623rem + 0.19481vw, 1.25rem);
+    border-radius: clamp(0.3rem, 0.28149rem + 0.07792vw, 0.375rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    height: clamp(0.85rem, 0.81299rem + 0.15584vw, 1rem);
+    width: clamp(0.85rem, 0.81299rem + 0.15584vw, 1rem);
+
+}
+.faq {
+    font-size: clamp(0.9375rem, 0.92208rem + 0.06494vw, 1rem);
+    font-weight: 500;
+}
+
+@media (max-width: 955px) {
+    .faqs { width: 92%; margin: 0 auto; }
+    .faq-box { width: 100%; margin-block: clamp(0.5rem, 0.46696rem + 0.13913vw, 0.55rem); padding-inline: clamp(1rem, 0.93391rem + 0.27826vw, 1.1rem); }
+    .faq-head { text-align: center; }
+}
+
+/* Desktop scale: preserve the 955px sizes and grow to larger FHD caps at 1920px. */
+@media (min-width: 956px) {
+    .faq-sec {
+        margin-bottom: clamp(1.64002rem, 1.03636rem + 1.01137vw, 2.25rem);
+    }
+
+    .faq-head {
+        margin: clamp(1.64002rem, 1.03636rem + 1.01137vw, 2.25rem) 0;
+        font-size: clamp(2.23336rem, 1.32622rem + 1.51982vw, 3.15rem);
+    }
+
+    .faqs {
+        margin: 0 clamp(1.31201rem, 0.82908rem + 0.8091vw, 1.8rem);
+    }
+
+    .faq-box {
+        margin: clamp(0.82001rem, 0.51817rem + 0.50569vw, 1.125rem) auto;
+        padding: 0 clamp(1.09334rem, 0.6909rem + 0.67425vw, 1.5rem);
+        min-height: clamp(2.71802rem, 1.84517rem + 1.46236vw, 3.6rem);
+        gap: clamp(0.87467rem, 0.55272rem + 0.5394vw, 1.2rem);
+        padding-block: clamp(0.76534rem, 0.48364rem + 0.47197vw, 1.05rem);
+        border-radius: clamp(0.328rem, 0.20726rem + 0.20228vw, 0.45rem);
+    }
+
+    .arrow-box {
+        height: clamp(1.13251rem, 0.76882rem + 0.60931vw, 1.5rem);
+        border-radius: clamp(0.328rem, 0.20726rem + 0.20228vw, 0.45rem);
+        width: clamp(1.13251rem, 0.76882rem + 0.60931vw, 1.5rem);
+    }
+
+    .arrow {
+        height: clamp(0.90601rem, 0.61506rem + 0.48745vw, 1.2rem);
+        width: clamp(0.90601rem, 0.61506rem + 0.48745vw, 1.2rem);
+    }
+
+    .faq {
+        font-size: clamp(0.96084rem, 0.6252rem + 0.56234vw, 1.3rem);
+    }
+}

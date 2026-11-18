@@ -1,0 +1,82 @@
+/* Fluid lengths interpolate from 380px to 1920px; media rules retain tablet/phone layouts. */
+:root {
+    --info-sec-bg: #f2f0ec;
+    --link-yellow: #cc9c00;
+
+}
+
+.info-sec {
+    background-color: var(--info-sec-bg);
+    margin: clamp(3rem, 2.81494rem + 0.77922vw, 3.75rem) 0;
+}
+
+.info-flex {
+    font-size: clamp(0.9375rem, 0.92208rem + 0.06494vw, 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.info-box1 {
+    margin: clamp(2.5rem, 2.34578rem + 0.64935vw, 3.125rem);
+    width: clamp(0rem, 30vw, 36rem);
+}
+
+.info-box2 {
+    margin-bottom: clamp(3rem, 2.81494rem + 0.77922vw, 3.75rem);
+    width: clamp(0rem, 30vw, 36rem);
+}
+
+.info-head-1 {
+    font-size: clamp(1.75rem, 1.68831rem + 0.25974vw, 2rem);
+    margin-bottom: clamp(1rem, 0.93831rem + 0.25974vw, 1.25rem);
+    font-weight: 300;
+}
+
+.info-para-1 {
+    margin-bottom: clamp(1rem, 0.93831rem + 0.25974vw, 1.25rem);
+}
+
+.info-box1 span {
+    color: var(--link-yellow);
+}
+
+@media (max-width: 955px) {
+    .info-flex { width: 92%; gap: clamp(1.5rem, 1.40087rem + 0.41739vw, 1.65rem); align-items: flex-start; padding-block: clamp(2rem, 1.86783rem + 0.55652vw, 2.2rem); }
+    .info-box1, .info-box2 { flex: 1; min-width: 0; width: auto; margin: 0; line-height: 1.5; }
+}
+@media (max-width: 455px) {
+    .info-flex { flex-direction: column; }
+    .info-box1, .info-box2 { width: 100%; }
+}
+
+/* Desktop scale: preserve the 955px sizes and grow to larger FHD caps at 1920px. */
+@media (min-width: 956px) {
+    .info-sec {
+        margin: clamp(3.28004rem, 2.07272rem + 2.02274vw, 4.5rem) 0;
+    }
+
+    .info-flex {
+        font-size: clamp(0.96084rem, 0.6252rem + 0.56234vw, 1.3rem);
+    }
+
+    .info-box1 {
+        margin: clamp(2.73336rem, 1.72726rem + 1.68562vw, 3.75rem);
+    }
+
+    .info-box2 {
+        margin-bottom: clamp(3.28004rem, 2.07272rem + 2.02274vw, 4.5rem);
+    }
+
+    .info-head-1 {
+        font-size: clamp(1.84334rem, 1.09453rem + 1.25456vw, 2.6rem);
+        margin-bottom: clamp(1.09334rem, 0.6909rem + 0.67425vw, 1.5rem);
+    }
+
+    .info-para-1 {
+        margin-bottom: clamp(1.09334rem, 0.6909rem + 0.67425vw, 1.5rem);
+    }
+}

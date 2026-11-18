@@ -1,0 +1,210 @@
+/* Fluid lengths interpolate from 380px to 1920px; media rules retain tablet/phone layouts. */
+:root {
+    --footer-sec-bg: #232323;
+    --footer-sec-text: white;
+    --foot-li: #cccccc;
+    --foot-email: #3b3b3b;
+}
+
+.footer-sec {
+    font-size: clamp(0.9375rem, 0.92208rem + 0.06494vw, 1rem);
+    margin: clamp(2rem, 1.87662rem + 0.51948vw, 2.5rem) auto;
+    background-color: var(--footer-sec-bg);
+    border-radius: clamp(0.4rem, 0.37532rem + 0.1039vw, 0.5rem);
+    color: var(--footer-sec-text);
+    width: 98%;
+    max-width: 1920px;
+}
+
+.footer-grid {
+    display: grid;
+    padding: clamp(1.25rem, 1.17289rem + 0.32468vw, 1.5625rem) clamp(1.75rem, 1.64205rem + 0.45455vw, 2.1875rem);
+    grid-template-columns: minmax(0, 4fr) minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.6rem, 1.5013rem + 0.41558vw, 2rem);
+}
+
+.foot-col-1-logo {
+    font-weight: 500;
+    margin: clamp(0.5rem, 0.46916rem + 0.12987vw, 0.625rem) 0;
+    font-size: clamp(1rem, 0.96916rem + 0.12987vw, 1.125rem);
+}
+
+.ul-head {
+    margin: clamp(0.5rem, 0.46916rem + 0.12987vw, 0.625rem) 0;
+    font-size: clamp(1rem, 0.96916rem + 0.12987vw, 1.125rem);
+    font-weight: 600;
+}
+
+.ul {
+    list-style: none;
+}
+
+.foot-li {
+    margin: clamp(0.5rem, 0.46916rem + 0.12987vw, 0.625rem) 0;
+    font-size: clamp(0.8125rem, 0.79708rem + 0.06494vw, 0.875rem);
+    color: var(--foot-li);
+}
+
+.foot-li:hover {
+    color: var(--footer-sec-text);
+}
+
+.news {
+    font-weight: 600;
+    margin: clamp(0.2rem, 0.18766rem + 0.05195vw, 0.25rem) 0;
+    font-size: clamp(0.8125rem, 0.79708rem + 0.06494vw, 0.875rem);
+}
+
+.news-tag {
+    margin: clamp(0.3rem, 0.28149rem + 0.07792vw, 0.375rem) 0;
+    font-size: clamp(0.8125rem, 0.79708rem + 0.06494vw, 0.875rem);
+    color: var(--foot-li);
+}
+
+.subscribe-form {
+    display: flex;
+    align-items: center;
+    background-color: #363636;
+    padding: clamp(0.3rem, 0.28149rem + 0.07792vw, 0.375rem);
+    border-radius: clamp(0.4rem, 0.37532rem + 0.1039vw, 0.5rem);
+    width: 100%;
+    max-width: 400px;
+}
+
+.subscribe-input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: clamp(0.5rem, 0.46916rem + 0.12987vw, 0.625rem) clamp(0.7rem, 0.65682rem + 0.18182vw, 0.875rem);
+}
+
+.subscribe-input::placeholder {
+    color: #8c8c8c;
+}
+
+.subscribe-btn {
+    background-color: #ffde59;
+    color: #111111;
+    border: none;
+    border-radius: clamp(0.3rem, 0.28149rem + 0.07792vw, 0.375rem);
+    padding: clamp(0.6rem, 0.56299rem + 0.15584vw, 0.75rem) clamp(1rem, 0.93831rem + 0.25974vw, 1.25rem);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #f5d03b;
+}
+
+.copyright {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    color: var(--foot-li);
+    display: flex;
+    justify-self: start;
+}
+
+.copy {
+    height: clamp(1.0625rem, 1.01623rem + 0.19481vw, 1.25rem);
+    width: clamp(1.0625rem, 1.01623rem + 0.19481vw, 1.25rem);
+    flex-shrink: 0;
+}
+
+@media (max-width: 955px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .subscribe-form {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 455px) {
+    .footer-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .subscribe-form {
+        flex-wrap: wrap;
+    }
+}
+
+.footer-grid > div { min-width: 0; overflow-wrap: break-word; }
+.copyright { gap: clamp(0.4rem, 0.37532rem + 0.1039vw, 0.5rem); align-items: center; }
+@media (max-width: 955px) {
+    .footer-grid { padding: clamp(1.5rem, 1.40087rem + 0.41739vw, 1.65rem); }
+    .news-email { grid-column: 1 / -1; }
+    .subscribe-input { flex-basis: clamp(10rem, 9.33913rem + 2.78261vw, 11rem); }
+}
+@media (max-width: 455px) {
+    .footer-sec { width: 92%; }
+    .footer-grid { padding: clamp(1.25rem, 0.61667rem + 2.66667vw, 1.375rem); gap: clamp(1.25rem, 0.61667rem + 2.66667vw, 1.375rem); }
+    .subscribe-btn { flex-grow: 1; min-height: clamp(2.75rem, 1.35667rem + 5.86667vw, 3.025rem); }
+    .copyright { font-size: clamp(0.875rem, 0.43167rem + 1.86667vw, 0.9625rem); align-items: flex-start; }
+}
+
+/* Desktop scale: preserve the 955px sizes and grow to larger FHD caps at 1920px. */
+@media (min-width: 956px) {
+    .footer-sec {
+        font-size: clamp(0.96084rem, 0.6252rem + 0.56234vw, 1.3rem);
+        margin: clamp(2.18668rem, 1.3818rem + 1.3485vw, 3rem) auto;
+        border-radius: clamp(0.43734rem, 0.27636rem + 0.2697vw, 0.6rem);
+    }
+
+    .footer-grid {
+        padding: clamp(1.36668rem, 0.86363rem + 0.8428vw, 1.875rem) clamp(1.91336rem, 1.20909rem + 1.17992vw, 2.625rem);
+        gap: clamp(1.74935rem, 1.10544rem + 1.0788vw, 2.4rem);
+    }
+
+    .foot-col-1-logo {
+        margin: clamp(0.54668rem, 0.34546rem + 0.33712vw, 0.75rem) 0;
+        font-size: clamp(1.04668rem, 0.63516rem + 0.68945vw, 1.4625rem);
+    }
+
+    .ul-head {
+        margin: clamp(0.54668rem, 0.34546rem + 0.33712vw, 0.75rem) 0;
+        font-size: clamp(1.04668rem, 0.63516rem + 0.68945vw, 1.4625rem);
+    }
+
+    .foot-li {
+        margin: clamp(0.54668rem, 0.34546rem + 0.33712vw, 0.75rem) 0;
+        font-size: clamp(0.83584rem, 0.53731rem + 0.50016vw, 1.1375rem);
+    }
+
+    .news {
+        margin: clamp(0.21867rem, 0.13818rem + 0.13485vw, 0.3rem) 0;
+        font-size: clamp(0.83584rem, 0.53731rem + 0.50016vw, 1.1375rem);
+    }
+
+    .news-tag {
+        margin: clamp(0.328rem, 0.20726rem + 0.20228vw, 0.45rem) 0;
+        font-size: clamp(0.83584rem, 0.53731rem + 0.50016vw, 1.1375rem);
+    }
+
+    .subscribe-form {
+        padding: clamp(0.328rem, 0.20726rem + 0.20228vw, 0.45rem);
+        border-radius: clamp(0.43734rem, 0.27636rem + 0.2697vw, 0.6rem);
+    }
+
+    .subscribe-input {
+        padding: clamp(0.54668rem, 0.34546rem + 0.33712vw, 0.75rem) clamp(0.76534rem, 0.48364rem + 0.47197vw, 1.05rem);
+    }
+
+    .subscribe-btn {
+        border-radius: clamp(0.328rem, 0.20726rem + 0.20228vw, 0.45rem);
+        padding: clamp(0.65601rem, 0.41454rem + 0.40455vw, 0.9rem) clamp(1.09334rem, 0.6909rem + 0.67425vw, 1.5rem);
+    }
+
+    .copy {
+        height: clamp(1.13251rem, 0.76882rem + 0.60931vw, 1.5rem);
+        width: clamp(1.13251rem, 0.76882rem + 0.60931vw, 1.5rem);
+    }
+}
