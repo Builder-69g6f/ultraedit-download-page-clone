@@ -40,8 +40,9 @@
     margin-bottom: clamp(1rem, 0.93831rem + 0.25974vw, 1.25rem);
 }
 
-.info-box1 span {
+.info-box1 span a {
     color: var(--link-yellow);
+    text-decoration: none;
 }
 
 @media (max-width: 955px) {
